@@ -1,4 +1,7 @@
 import pandas as pd
+import sklearn
+from sklearn import svm,preprocessing
+
 df=pd.read_csv("diamonds.csv", index_col=0)
 #df.set_index("carat", inplace=True)
 df.head()
@@ -18,8 +21,6 @@ df['clarity']=df['clarity'].map(clarity_dict)
 df['color']=df['color'].map(color_dict)
 
 df.head()
-import sklearn
-from sklearn import svm,preprocessing
 
 # shuffle the df for better results
 
