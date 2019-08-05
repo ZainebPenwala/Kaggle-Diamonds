@@ -5,11 +5,12 @@ from sklearn import svm,preprocessing
 df=pd.read_csv("diamonds.csv", index_col=0)
 #df.set_index("carat", inplace=True)
 df.head()
+
 # to convert into numerical form 
 df["cut"].unique()
-#df["cut"].astype("category").cat.codes
 df["clarity"].unique()
 df["color"].unique()
+
 # to assign numbers to string values
 
 cut_class_dict={'Fair':1, 'Good':2, 'Very Good':3, 'Premium':4, 'Ideal':5}
@@ -27,7 +28,7 @@ df.head()
 df = sklearn.utils.shuffle(df)
 X=df.drop("price", axis=1).values
 
-# scale the data to reduce the complexity and huf=ge range
+# scale the data to reduce the complexity and huge range
 X=preprocessing.scale(X)
 
 y=df["price"].values
